@@ -27,8 +27,13 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">偉人名言集</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">LOG IN</a></li>
-        <li><a href="badges.html">SIGN OUT</a></li>
+        <% if user_signed_in? %>
+          <li>ログインユーザー：<%= current_user.name %></li>
+          <li><%= link_to "LOG-OUT", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "SIGN-UP", new_user_registration_path %></li>
+          <li><%= link_to "LOG-IN", user_session_path %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
