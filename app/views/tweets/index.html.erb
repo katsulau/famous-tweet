@@ -1,33 +1,20 @@
   <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-content">
-          <p>挫折を経験した事がない者は、何も新しい事に挑戦したことが無いということだ。</p>
-          <p>アインシュタイン</p>
-        </div>
-        <div class="card-action">
-          <%= link_to "EDIT", "#", method: :get %>
-          <%= link_to "DELETE", "#", method: :get %>
-        </div>
-      </div>
-    </div>
+    <% @tweets.each do |tweet|%>
+       <div class="col s12 m6">
+         <div class="card">
+           <div class="card-content">
+             <%= simple_format(tweet.tweet) %>
+             <span class="name"><%= tweet.name %></span>
+           </div>
+           <div class="card-action">
+             <%= link_to "EDIT", "#", method: :get %>
+             <%= link_to "DELETE", "#", method: :get %>
+           </div>
+         </div>
+       </div>
+    <% end %>
+    <%= paginate(@tweets) %>
   </div>
-
-    <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-content">
-          <p>成功する人は、失敗から学び、別な方法でやり直す。</p>
-          <p>デール・カーネギー</p>
-        </div>
-        <div class="card-action">
-          <%= link_to "EDIT", "#", method: :get %>
-          <%= link_to "DELETE", "#", method: :get %>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
     <div class="row">
     <div class="col s12 m6">
@@ -43,3 +30,5 @@
       </div>
     </div>
   </div>
+
+  
