@@ -1,0 +1,14 @@
+<div class="col s12 m6">
+  <div class="card">
+    <div class="black-text text-darken-2">
+      <div class="card-content">
+         <%= simple_format(tweet.tweet) %>
+         <span class="name"><%= tweet.name %></span>
+       </div>
+       <div class="card-action">
+         <%= link_to "EDIT", "/tweets/#{tweet.id}/edit", method: :get %>
+         <%= link_to "DELETE", "/tweets/#{tweet.id}", method: :delete %>
+       </div>
+    </div>
+  </div>
+</div>
