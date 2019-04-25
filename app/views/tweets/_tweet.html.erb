@@ -3,12 +3,15 @@
     <div class="black-text text-darken-2">
       <div class="card-content">
          <%= simple_format(tweet.tweet) %>
-         <span class="name"><%= tweet.name %></span>
+         <span class="name">~ <%= tweet.name %> ~</span>
        </div>
+       <% if user_signed_in? && tweet.user_id == current_user.id %>
        <div class="card-action">
          <%= link_to "EDIT", "/tweets/#{tweet.id}/edit", method: :get %>
          <%= link_to "DELETE", "/tweets/#{tweet.id}", method: :delete %>
        </div>
+       <% else %>
+       <% end %>
     </div>
   </div>
 </div>
