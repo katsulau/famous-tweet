@@ -1,34 +1,4 @@
   <div class="row">
-    <% @tweets.each do |tweet|%>
-       <div class="col s12 m6">
-         <div class="card">
-           <div class="card-content">
-             <%= simple_format(tweet.tweet) %>
-             <span class="name"><%= tweet.name %></span>
-           </div>
-           <div class="card-action">
-             <%= link_to "EDIT", "#", method: :get %>
-             <%= link_to "DELETE", "#", method: :get %>
-           </div>
-         </div>
-       </div>
-    <% end %>
-    <%= paginate(@tweets) %>
+    <%= render @tweets %>
   </div>
 
-    <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-content">
-          <p>商売とは、感動を与えることである。</p>
-          <p>松下幸之助</p>
-        </div>
-        <div class="card-action">
-          <%= link_to "EDIT", "#", method: :get %>
-          <%= link_to "DELETE", "#", method: :get %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
