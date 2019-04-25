@@ -2,3 +2,11 @@
   clear: both;
   margin-left: 25% !important;
 }
+
+.pagination {
+  text-align: center;
+}
+
+.brand-logo {
+  left: 45%;
+}
